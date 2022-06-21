@@ -14,9 +14,6 @@ def sanitize_text(text):
 
     result = re.sub(regex_urls, " ", text)
 
-    # note: not removing apostrophes
     regex_expr = r"\s['|’]|['|’]\s|[\^_~@!&;#:\-%“”‘\"%\*/{}\[\]\(\)\\|<>=+]"
-    result = re.sub(regex_expr, " ", result)
-
     # remove extra whitespace
     return " ".join(result.split())
